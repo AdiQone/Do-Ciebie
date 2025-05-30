@@ -37,7 +37,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Nie dziś i nie jutro</h1>
+        <h1>Do Ciebie</h1>
         <p>Wpisz naszą datę:</p>
         <input type="password" id="password" placeholder="DDMMYYYY" oninput="checkPassword()">
         <div class="message" id="message">
@@ -91,10 +91,12 @@ Na zawsze Twój A.K
             </p>
         </div>
     </div>
-<script>
-  function checkPassword() {
-    const password = document.getElementById("password").value.trim();
-    const correctPasswords = [
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+                const correctPasswords = [
       "16082020",
       "16.08.2020",
       "16/08/2020",
@@ -106,26 +108,11 @@ Na zawsze Twój A.K
       "20200816",
       "16.8.2020"
     ];
-
-    if (correctPasswords.includes(password)) {
-      document.getElementById("locked-content").style.display = "block";
-      document.getElementById("password-form").style.display = "none";
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    document
-      .getElementById("submit-button")
-      .addEventListener("click", function () {
-        checkPassword();
-      });
-  });
-</script>
-
-
-
-
-
-
+                message.style.display = 'block';
+            } else {
+                message.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
