@@ -96,7 +96,31 @@ Na zawsze Twój A.K
         function checkPassword() {
             const password = document.getElementById('password').value;
             const message = document.getElementById('message');
-            if (password === '16082020') {
+            <script>
+  const correctPasswords = [
+    "16082020",
+    "16.08.2020",
+    "16/08/2020",
+    "16-08-2020",
+    "16 sierpnia 2020",
+    "16 Sierpnia 2020",
+    "16 08 2020",
+    "2020-08-16",
+    "20200816",
+    "16.8.2020"
+  ];
+
+  document.getElementById("submit-button").addEventListener("click", function () {
+    const userInput = document.getElementById("password").value.trim();
+    if (correctPasswords.includes(userInput)) {
+      document.getElementById("locked-content").style.display = "block";
+      document.getElementById("password-form").style.display = "none";
+    } else {
+      alert("Niepoprawna data. Spróbuj dalej.");
+    }
+  });
+</script>
+
                 message.style.display = 'block';
             } else {
                 message.style.display = 'none';
