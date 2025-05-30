@@ -105,22 +105,27 @@ Na zawsze Twój A.K
     "16.8.2020"
   ];
 
-  function checkPassword() {
-    const password = document.getElementById("password").value.trim();
-    const message = document.getElementById("message");
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("submit-button").addEventListener("click", function (event) {
+      event.preventDefault(); // ← ZATRZYMUJE PRZEŁADOWANIE STRONY
 
-    if (correctPasswords.includes(password)) {
-      document.getElementById("locked-content").style.display = "block";
-      document.getElementById("password-form").style.display = "none";
-      message.style.display = "block";
-    } else {
-      alert("Niepoprawna data. Spróbuj dalej.");
-      message.style.display = "none";
-    }
-  }
+      const password = document.getElementById("password").value.trim();
+      const message = document.getElementById("message");
 
-  document.getElementById("submit-button").addEventListener("click", checkPassword);
+      if (correctPasswords.includes(password)) {
+        document.getElementById("locked-content").style.display = "block";
+        document.getElementById("password-form").style.display = "none";
+        message.style.display = "block";
+      } else {
+        alert("Niepoprawna data. Spróbuj dalej.");
+        message.style.display = "none";
+      }
+    });
+  });
 </script>
+
+
+
 
 
 </body>
