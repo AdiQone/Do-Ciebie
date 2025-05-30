@@ -91,12 +91,7 @@ Na zawsze Twój A.K
             </p>
         </div>
     </div>
-
-    <script>
-        function checkPassword() {
-            const password = document.getElementById('password').value;
-            const message = document.getElementById('message');
-            <script>
+ <script>
   const correctPasswords = [
     "16082020",
     "16.08.2020",
@@ -110,22 +105,22 @@ Na zawsze Twój A.K
     "16.8.2020"
   ];
 
-  document.getElementById("submit-button").addEventListener("click", function () {
-    const userInput = document.getElementById("password").value.trim();
-    if (correctPasswords.includes(userInput)) {
+  function checkPassword() {
+    const password = document.getElementById("password").value.trim();
+    const message = document.getElementById("message");
+
+    if (correctPasswords.includes(password)) {
       document.getElementById("locked-content").style.display = "block";
       document.getElementById("password-form").style.display = "none";
+      message.style.display = "block";
     } else {
       alert("Niepoprawna data. Spróbuj dalej.");
+      message.style.display = "none";
     }
-  });
+  }
+
+  document.getElementById("submit-button").addEventListener("click", checkPassword);
 </script>
 
-                message.style.display = 'block';
-            } else {
-                message.style.display = 'none';
-            }
-        }
-    </script>
 </body>
 </html>
