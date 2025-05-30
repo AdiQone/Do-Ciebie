@@ -37,7 +37,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Do Ciebie</h1>
+        <h1>Nie dziś i nie jutro</h1>
         <p>Wpisz naszą datę:</p>
         <input type="password" id="password" placeholder="DDMMYYYY" oninput="checkPassword()">
         <div class="message" id="message">
@@ -96,7 +96,7 @@ Na zawsze Twój A.K
         function checkPassword() {
             const password = document.getElementById('password').value;
             const message = document.getElementById('message');
-            if (Password === [ '16082020',) {
+            if (password === '16082020') {
                 message.style.display = 'block';
             } else {
                 message.style.display = 'none';
